@@ -2,26 +2,12 @@ package main
 
 import (
 	"fmt"
-	v "go-leet/FindModeinBinarySearchTree"
+	v "go-leet/ArrayPartition"
 )
 
 func main() {
 
-	root := v.TreeNode{
-		Val:  1,
-		Left: nil,
-		Right: &v.TreeNode{
-			Val: 2,
-			Left: &v.TreeNode{
-				Val:   2,
-				Left:  nil,
-				Right: nil,
-			},
-			Right: nil,
-		},
-	}
-
-	res := make(map[int]int)
-	v.PreOrder(&root, &res)
+	nums := []int{1, 4, 3, 2}
+	res := v.ArrayPairSum(nums)
 	fmt.Print(res)
 }

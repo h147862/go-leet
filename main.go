@@ -2,12 +2,35 @@ package main
 
 import (
 	"fmt"
-	v "go-leet/ArrayPartition"
+	v "go-leet/DeepestLeavesSum"
 )
 
 func main() {
 
-	nums := []int{1, 4, 3, 2}
-	res := v.ArrayPairSum(nums)
+	root := &v.TreeNode{
+		Val: 1,
+		Left: &v.TreeNode{
+			Val: 2,
+			Left: &v.TreeNode{
+				Val: 4,
+				Left: &v.TreeNode{
+					Val: 7,
+				},
+			},
+			Right: &v.TreeNode{
+				Val: 5,
+			},
+		},
+		Right: &v.TreeNode{
+			Val: 3,
+			Left: &v.TreeNode{
+				Val: 6,
+				Right: &v.TreeNode{
+					Val: 8,
+				},
+			},
+		},
+	}
+	res := v.DeepestLeavesSum(root)
 	fmt.Print(res)
 }

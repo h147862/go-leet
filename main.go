@@ -2,16 +2,17 @@ package main
 
 import (
 	"fmt"
-	m "go-leet/Combinations"
+	m "go-leet/CombinationSum"
+	"sort"
 )
 
 func main() {
-	nums := []int{1, 2, 3, 5, 7}
-	k := 3
-	used := make(map[int]bool)
-	cnt := 0
-	result := [][]int{}
-	tmp := []int{}
-	m.Combine(nums, k, used, &tmp, cnt, &result)
-	fmt.Println(result)
+	nums := []int{2, 9, 6, 7}
+	target := 7
+	cur := []int{}
+	res := [][]int{}
+	idx := 0
+	sort.IntSlice(nums).Sort()
+	m.CombinationSum(nums, target, &cur, &res, idx)
+	fmt.Println(res)
 }

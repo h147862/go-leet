@@ -2,17 +2,14 @@ package main
 
 import (
 	"fmt"
-	m "go-leet/LetterTilePossibilities"
+	m "go-leet/Subsets"
 )
 
 func main() {
 
-	tiles := "AAB"
-	r := []rune(tiles)
-	tile := [26]int{}
-	for _, v := range r {
-		tile[v-'A'] += 1
-	}
-	sum := m.NumTilePossibilities(tile)
-	fmt.Println(sum)
+	nums := []int{1, 2, 3}
+	res := [][]int{[]int{}}
+	cur := []int{}
+	m.Subsets(nums, &res, &cur)
+	fmt.Println(res)
 }

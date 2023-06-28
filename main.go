@@ -2,37 +2,20 @@ package main
 
 import (
 	"fmt"
-	m "go-leet/LetterCasePermutation"
-	"strings"
-	"unicode"
+	m "go-leet/SubsetsII"
+	"sort"
 )
 
 func main() {
-	s := "a1b2"
-	res := []string{}
-	alphabet := []m.Alphabet{}
-	strArr := []string{}
-	for addr, r := range s {
-		al := []string{}
-		ascii := r - '0'
-		str := string(r)
-		strArr = append(strArr, str)
-		if ascii >= 0 && ascii <= 9 {
-			continue
-		}
-		al = append(al, str)
-		tmp := ""
-		if !unicode.IsUpper(r) {
-			tmp = strings.ToUpper(str)
-		} else {
-			tmp = strings.ToLower(str)
-		}
-		al = append(al, tmp)
-		alphabet = append(alphabet, m.Alphabet{
-			Addr:   addr,
-			StrArr: al,
-		})
+	nums := []int{4, 4, 4, 1, 4}
+	cur := []int{}
+	res := [][]int{}
+	used := []bool{}
+	exist := make(map[string]bool)
+	sort.Ints(nums)
+	for idx := 0; idx < len(nums); idx++ {
+		used = append(used, false)
 	}
-	m.LetterCasePermutation(&strArr, alphabet, &res, 0)
+	m.SubsetsWithDup(nums, &used, &exist, &cur, &res, 0)
 	fmt.Println(res)
 }

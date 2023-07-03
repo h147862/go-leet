@@ -2,17 +2,11 @@ package main
 
 import (
 	"fmt"
-	m "go-leet/PalindromePartitioning"
+	m "go-leet/GroupAnagrams"
 )
 
 func main() {
-	s := "aab"
-	str := []string{}
-	for _, v := range []rune(s) {
-		str = append(str, string(v))
-	}
-	cur := []string{}
-	res := [][]string{}
-	m.Par(str, &cur, &res, len(s))
+	s := []string{"eat", "tea", "tan", "ate", "nat", "bat"}
+	res := m.Group(s)
 	fmt.Println(res)
 }

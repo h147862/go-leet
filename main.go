@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
-	m "go-leet/GroupAnagrams"
+	m "go-leet/ValidAnagram"
 )
 
 func main() {
-	s := []string{"eat", "tea", "tan", "ate", "nat", "bat"}
-	res := m.Group(s)
+	s := "anagram"
+	t := "nagaram"
+	res := m.Is(s, t)
 	fmt.Println(res)
 }

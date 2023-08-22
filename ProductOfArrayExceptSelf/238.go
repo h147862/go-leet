@@ -31,31 +31,21 @@ func productExceptSelf(nums []int) []int {
 }
 
 func P(nums []int) []int {
-	zCnt := 0
-	prod := 1
+	left := []int{}
+	right := []int{}
 	res := []int{}
-	for _, val := range nums {
-		if val == 0 {
-			zCnt += 1
-
+	for idx, _ := range nums {
+		if idx == 0 {
+			left = append(left, 1)
+			right = append(right, 1)
 		} else {
-			prod *= val
+			left = append(left, left[idx-1]*nums[idx-1])
+			right = append(right, right[idx-1]*nums[len(nums)-idx])
 		}
 	}
-	for _, val := range nums {
-		if val == 0 {
-			if zCnt > 1 {
-				res = append(res, 0)
-			} else {
-				res = append(res, prod)
-			}
-		} else {
-			if zCnt > 0 {
-				res = append(res, 0)
-			} else {
-				res = append(res, prod/val)
-			}
-		}
+	for idx, _ := range nums {
+		v := left[idx] * right[len(nums)-idx-1]
+		res = append(res, v)
 	}
 	return res
 }

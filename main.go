@@ -2,12 +2,11 @@ package main
 
 import (
 	"fmt"
-	m "go-leet/ValidAnagram"
+	m "go-leet/ProductOfArrayExceptSelf"
 )
 
 func main() {
-	s := "anagram"
-	t := "nagaram"
-	res := m.Is(s, t)
+	nums := []int{-1, 1, 0, -3, 3}
+	res := m.P(nums)
 	fmt.Println(res)
 }

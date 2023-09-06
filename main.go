@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	m "go-leet/ProductOfArrayExceptSelf"
+	m "go-leet/ContainsDuplicate"
 )
 
 func main() {
-	nums := []int{-1, 1, 0, -3, 3}
-	res := m.P(nums)
+	nums := []int{1, 2, 3, 4}
+	res := m.Duplicate(nums)
 	fmt.Println(res)
 }

@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	m "go-leet/ContainsDuplicate"
+	m "go-leet/ValidPalindrome"
 )
 
 func main() {
-	nums := []int{1, 2, 3, 4}
-	res := m.Duplicate(nums)
+	s := "0P"
+	res := m.P(s)
 	fmt.Println(res)
 }
